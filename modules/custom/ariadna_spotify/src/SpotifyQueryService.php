@@ -9,7 +9,7 @@ use Drupal\ariadna_spotify\SpotifyQueryServiceInterface;
  */
 class SpotifyQueryService implements SpotifyQueryServiceInterface {
   
-  private $token = '';
+  private $token = 'BQA_tNEEXhOAHlvNE4xnv6f8wwLqbMkkpBpFht-ljzReYrpO1JE5o8D9dwsNl2MY9LtocYlD3vmm5OUXNUiTBjDS1CUGxIqEUodTiczmCD_erUL6tR9UPuZKo_iJI2tbsGOU1HoqMI5oMZKLaG2cyp--Mal5NNI';
 
   /**
    * Constructs a new SpotifyQueryService object.
