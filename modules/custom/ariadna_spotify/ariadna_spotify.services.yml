@@ -1,0 +1,4 @@
+services:
+  ariadna_spotify.query:
+    class: Drupal\ariadna_spotify\SpotifyQueryService
+    arguments: []
