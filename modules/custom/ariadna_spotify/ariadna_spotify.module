@@ -28,8 +28,18 @@ function ariadna_spotify_help($route_name, RouteMatchInterface $route_match) {
  */
 function ariadna_spotify_theme() {
   return [
-    'ariadna_spotify' => [
-      'render element' => 'children',
+    'ariadna_spotify_latest' => [
+      'template' => 'ariadna-spotify-latest',
+      'variables' => [
+        'items' => NULL
+      ],
+    ],
+    'ariadna_spotify_artist' => [
+      'template' => 'ariadna-spotify-artist',
+      'variables' => [
+        'artist' => NULL,
+        'albums' => NULL
+      ],
     ],
   ];
 }

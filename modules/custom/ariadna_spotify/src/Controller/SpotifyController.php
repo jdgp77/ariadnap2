@@ -16,7 +16,7 @@ class SpotifyController extends ControllerBase {
    *
    * @var \Drupal\Core\Render\RendererInterface
    */
-  protected $renderer;
+  protected $spotifyQuery;
 
   /**
    * Constructs a new EntityController.
@@ -53,9 +53,11 @@ class SpotifyController extends ControllerBase {
    *   Return Hello string.
    */
   public function latestAlbums() {
+    $resp = $this->spotifyQuery->queryRelease();
+
     return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Implement method: latestAlbums')
+      '#theme' => 'ariadna_spotify_latest',
+      '#items' => $resp['albums']['items'],
     ];
   }
   /**
@@ -65,9 +67,18 @@ class SpotifyController extends ControllerBase {
    *   Return Hello string.
    */
   public function artist($id) {
+    $artist = $this->spotifyQuery->artist($id);
+    $albums = $this->spotifyQuery->artistAlbums($id);
+    
+    foreach ($albums as $key => $album) {
+      $tracks = $this->spotifyQuery->albumsTracks($album['id']);
+      $albums[$key]['track'] = $tracks[0]['name'];
+    }
+
     return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Implement method: artist with parameter(s): $id'),
+      '#theme' => 'ariadna_spotify_artist',
+      '#artist' => $artist,
+      '#albums' => $albums,
     ];
   }
 
