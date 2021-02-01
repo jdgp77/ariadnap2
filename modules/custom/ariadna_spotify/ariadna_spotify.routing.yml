@@ -1,0 +1,15 @@
+
+ariadna_spotify.spotify_controller_latestAlbums:
+  path: '/lanzamientos'
+  defaults:
+    _controller: '\Drupal\ariadna_spotify\Controller\SpotifyController::latestAlbums'
+    _title: 'Spotify Release'
+  requirements:
+    _permission: 'access content'
+ariadna_spotify.spotify_controller_artist:
+  path: '/artista/{id}'
+  defaults:
+    _controller: '\Drupal\ariadna_spotify\Controller\SpotifyController::artist'
+    _title: 'Spotify Artist'
+  requirements:
+    _permission: 'access content'
