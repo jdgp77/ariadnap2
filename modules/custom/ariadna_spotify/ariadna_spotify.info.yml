@@ -1,0 +1,5 @@
+name: 'ariadna_spotify'
+type: module
+description: 'Permite obtener información de spotify'
+core: 8.x
+package: 'Ariadna'

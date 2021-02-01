@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains ariadna_spotify.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ariadna_spotify_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ariadna_spotify module.
+    case 'help.page.ariadna_spotify':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Permite obtener información de spotify') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ariadna_spotify_theme() {
+  return [
+    'ariadna_spotify' => [
+      'render element' => 'children',
+    ],
+  ];
+}

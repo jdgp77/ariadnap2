@@ -1,0 +1,13 @@
+{
+    "name": "ariadna_spotify",
+    "type": "drupal-module",
+    "description": "Permite obtener información de spotify",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/ariadna_spotify",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/ariadna_spotify",
+        "source": "http://cgit.drupalcode.org/ariadna_spotify",
+    },
+}
