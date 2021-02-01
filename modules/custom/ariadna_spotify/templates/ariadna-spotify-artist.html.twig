@@ -4,13 +4,13 @@
   <h2>{{ artist.name }}</h2>
   {% for album in albums %}
     <div class="row">
-        <div class="col-1 col-sm-2 col-md-3">
+        <div class="col-12 col-sm-6 col-md-3">
           <img src="{{ album.images[0].url }}" />
         </div>
-        <div class="col-1 col-sm-2 col-md-3">
+        <div class="col-12 col-sm-6 col-md-3">
           <div>{{ album.name  }}</div>
         </div>
-        <div class="col-1 col-sm-2 col-md-3">
+        <div class="col-12 col-sm-6 col-md-3">
           <div>{{ album.track  }}</div>
         </div>
     </div>

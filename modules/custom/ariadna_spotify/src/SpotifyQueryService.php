@@ -9,13 +9,25 @@ use Drupal\ariadna_spotify\SpotifyQueryServiceInterface;
  */
 class SpotifyQueryService implements SpotifyQueryServiceInterface {
   
-  private $token = 'BQA_tNEEXhOAHlvNE4xnv6f8wwLqbMkkpBpFht-ljzReYrpO1JE5o8D9dwsNl2MY9LtocYlD3vmm5OUXNUiTBjDS1CUGxIqEUodTiczmCD_erUL6tR9UPuZKo_iJI2tbsGOU1HoqMI5oMZKLaG2cyp--Mal5NNI';
+  private $code = '';
+  private $token = '';
 
   /**
-   * Constructs a new SpotifyQueryService object.
+   * Query release from spotify.
    */
-  public function __construct() {
+  public function getToken() { 
+    $resp = \Drupal::httpClient()
+      ->post('https://accounts.spotify.com/api/token', [
+        'headers' => [
+          'Content-Type' => 'application/x-www-form-urlencoded',
+          'Authorization' => 'Basic ' . $this->code,
+        ],
+        'form_params' => [
+          'grant_type' => 'client_credentials',
+        ]
+      ]);
 
+    $this->token = json_decode($resp->getBody(), true)['access_token'];
   }
 
   /**

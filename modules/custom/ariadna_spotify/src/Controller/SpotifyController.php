@@ -53,6 +53,8 @@ class SpotifyController extends ControllerBase {
    *   Return Hello string.
    */
   public function latestAlbums() {
+    $this->spotifyQuery->getToken($id);
+
     $resp = $this->spotifyQuery->queryRelease();
 
     return [
@@ -67,6 +69,8 @@ class SpotifyController extends ControllerBase {
    *   Return Hello string.
    */
   public function artist($id) {
+    $this->spotifyQuery->getToken($id);
+
     $artist = $this->spotifyQuery->artist($id);
     $albums = $this->spotifyQuery->artistAlbums($id);
     
