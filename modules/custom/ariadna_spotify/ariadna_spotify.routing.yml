@@ -13,3 +13,12 @@ ariadna_spotify.spotify_controller_artist:
     _title: 'Spotify Artist'
   requirements:
     _permission: 'access content'
+ariadna_spotify.ariana_spotify_form:
+  path: '/admin/config/ariadna_spotify/spotify'
+  defaults:
+    _form: '\Drupal\ariadna_spotify\Form\SpotifyForm'
+    _title: 'SpotifyForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

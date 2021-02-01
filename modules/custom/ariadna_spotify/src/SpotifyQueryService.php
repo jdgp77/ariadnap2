@@ -9,8 +9,16 @@ use Drupal\ariadna_spotify\SpotifyQueryServiceInterface;
  */
 class SpotifyQueryService implements SpotifyQueryServiceInterface {
   
-  private $code = '';
+  private $code = 'YzM4MTU0NjcxZDUzNDkxN2E2ZjgwMTVhMmM0NTIyYmE6NzI4MzI1NDZkY2I2NGNkNjg3YzliZWE5MWYyNzk2NjI=';
   private $token = '';
+
+  /**
+   * Constructs a new SpotifyQueryService object.
+   */
+  public function __construct() {
+    $confSpotify = \Drupal::config('ariadna_spotify.spotify');
+    $this->code = base64_encode($confSpotify->get('client_id') . ':' . $confSpotify->get('client_secret'));
+  }
 
   /**
    * Query release from spotify.

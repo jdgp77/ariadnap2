@@ -1,0 +1,6 @@
+ariadna_spotify.ariana_spotify_form:
+  title: 'Accesos de Spotify'
+  route_name: ariadna_spotify.ariana_spotify_form
+  description: 'Permite administrar las credenciales de Spotify'
+  parent: system.admin_config_system
+  weight: 99
